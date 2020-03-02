@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SelectorComponent } from './selector/selector.component';
 import { OrganizerComponent } from './organizer/organizer.component';
+import { PipeMoment } from './shared/moment.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     SelectorComponent,
-    OrganizerComponent
+    OrganizerComponent,
+    PipeMoment
   ],
   imports: [
     BrowserModule
