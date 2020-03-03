@@ -20,7 +20,7 @@ interface Week {
 })
 export class CalendarComponent implements OnInit {
 
-    private calendar: Week[];
+    public calendar: Week[];
 
     constructor(private dateService: DateService) {
 
@@ -53,9 +53,9 @@ export class CalendarComponent implements OnInit {
                         // Определяем активную дату в календаре, сравнивая ее value
                         const active = moment().isSame(value, 'date');
                         // Определяем вхождение даты в текущий месяц
-                        const disabled = !moment().isSame(value, 'month');
+                        const disabled = !now.isSame(value, 'month');
                         // Выбранная дата в календаре
-                        const selected = moment().isSame(value, 'date');
+                        const selected = now.isSame(value, 'date');
 
                         return {
                             value,
@@ -66,9 +66,13 @@ export class CalendarComponent implements OnInit {
                     })
             });
 
-            console.log(calendar);
+            this.calendar = calendar;
         }
 
+    }
+
+    selectDay(day: moment.Moment) {
+        this.dateService.changeDay(day);
     }
 
 }

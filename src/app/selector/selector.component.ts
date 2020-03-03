@@ -8,7 +8,7 @@ import { DateService } from '../shared/date.service';
 })
 export class SelectorComponent {
 
-	constructor(private dateService: DateService) { }
+	constructor(public dateService: DateService) { }
 
 	switchMonth(step: number) {
 		this.dateService.changeMonth(step);

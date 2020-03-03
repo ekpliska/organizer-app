@@ -1,0 +1,39 @@
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+
+    th {
+        color: #fff;
+    }
+
+    td, th {
+        border: 1px solid #fff;
+        padding: 0.5rem;
+    }
+
+    td {
+        text-align: center;
+        transition: all .2s;
+
+        &.disabled {
+            opacity: .5;
+        }
+    
+        &:hover:not(.disabled) {
+            background: #eee;
+            cursor: pointer;
+        }
+
+    }
+
+    .active {
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .selected {
+        color: var(--light-color);
+    }
+
+}
